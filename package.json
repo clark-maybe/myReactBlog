@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "antd": "^3.17.0",
+    "options": "0.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router": "^5.0.0",
     "react-scripts": "3.0.0"
   },
   "scripts": {
