@@ -1,11 +1,49 @@
 import React from 'react'
-import {Layout, Menu, Icon, Carousel, Skeleton, BackTop} from 'antd'
+import {Layout, Menu, Icon, Carousel, Skeleton, BackTop, Drawer} from 'antd'
 import Logo from '../../../src/img/logo.jpg'
+import AboutMe from "../AboutMe";
 
 const {SubMenu} = Menu;
 const {Header, Content, Footer, Sider} = Layout;
 
 class Home extends React.Component {
+    constructor(props){
+        super(props);
+        this.showMe = this.showMe.bind(this);
+        this.renderDrawer = this.renderDrawer.bind(this);
+        this.hiddenMe = this.hiddenMe.bind(this);
+        this.state={
+            visible: false,
+            placement: 'right'
+        }
+    }
+
+    showMe(){
+        this.setState({
+            visible: true
+        })
+    }
+
+    hiddenMe(){
+        this.setState({
+            visible: false
+        })
+    }
+
+    renderDrawer(){
+        return(
+            <Drawer
+                title={<span style={{fontWeight:'bold'}}>about Me</span>}
+                placement={this.state.placement}
+                closable={false}
+                onClose={this.hiddenMe}
+                visible={this.state.visible}
+            >
+                <AboutMe/>
+            </Drawer>
+        )
+    }
+
     render() {
         return (
             <div className={'homeStyle'}>
@@ -13,7 +51,9 @@ class Home extends React.Component {
                     <Header className="header">
                         <div className="logo"
                              style={{display: 'inline-block', boxShadow: '2px 2px 2px', marginRight: '20px'}}>
-                            <img src={Logo} alt="logo" style={{width: '54px'}}/>
+                            <a onClick={this.showMe}>
+                                <img src={Logo} alt="logo" style={{width: '54px'}}/>
+                            </a>
                         </div>
                         <Menu
                             theme="dark"
@@ -80,6 +120,7 @@ class Home extends React.Component {
                         Created by <span style={{fontWeight: 'bold', fontSize: '15px'}}>Clark</span> with React
                     </Footer>
                 </Layout>
+                {this.renderDrawer()}
             </div>
         )
     }
