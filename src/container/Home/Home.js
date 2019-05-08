@@ -1,5 +1,6 @@
 import React from 'react'
 import {Layout, Menu, Icon, Carousel, Skeleton, BackTop, Drawer} from 'antd'
+import history from '../../history'
 import Logo from '../../../src/img/logo.jpg'
 import AboutMe from "../AboutMe";
 
@@ -12,10 +13,28 @@ class Home extends React.Component {
         this.showMe = this.showMe.bind(this);
         this.renderDrawer = this.renderDrawer.bind(this);
         this.hiddenMe = this.hiddenMe.bind(this);
+        this.getInitData = this.getInitData.bind(this);
         this.state = {
             visible: false,
             placement: 'right'
         }
+    }
+
+    componentDidMount() {
+        this.getInitData();
+    }
+
+    getInitData(){
+        fetch('./jsonData/init.json')
+            .then((res) => {
+                return res.json();
+            })
+            .then((common) => {
+                //TODO 数据固化
+            })
+            .catch(() => {
+                history.push('/');
+            });
     }
 
     showMe() {
@@ -38,6 +57,7 @@ class Home extends React.Component {
                 closable={false}
                 onClose={this.hiddenMe}
                 visible={this.state.visible}
+                width={350}
             >
                 <AboutMe/>
             </Drawer>
