@@ -1,5 +1,5 @@
 import React from 'react'
-import {Layout, Menu, Breadcrumb, Icon} from 'antd'
+import {Layout, Menu, Icon} from 'antd'
 import Logo from '../../../src/img/logo.jpg'
 
 const {SubMenu} = Menu;
@@ -22,15 +22,10 @@ class Home extends React.Component {
                             style={{lineHeight: '64px', display: 'inline-block'}}
                         >
                             <Menu.Item key="home">Home</Menu.Item>
-                            <Menu.Item key="aboutMe">aboutMe</Menu.Item>
+                            <Menu.Item key="aboutMe">About me</Menu.Item>
                         </Menu>
                     </Header>
                     <Content style={{padding: '0 50px', minHeight: '800px'}}>
-                        {/*<Breadcrumb style={{margin: '16px 0'}}>*/}
-                            {/*<Breadcrumb.Item>Home</Breadcrumb.Item>*/}
-                            {/*<Breadcrumb.Item>List</Breadcrumb.Item>*/}
-                            {/*<Breadcrumb.Item>App</Breadcrumb.Item>*/}
-                        {/*</Breadcrumb>*/}
                         <Layout style={{padding: '24px 0', background: '#fff', marginTop: '30px'}}>
                             <Sider width={200} style={{background: '#3da8ff'}}>
                                 <Menu
@@ -39,19 +34,19 @@ class Home extends React.Component {
                                     defaultOpenKeys={['sub1']}
                                     style={{height: '100%'}}
                                 >
-                                    <SubMenu key="sub1" title={<span><Icon type="user"/>subnav 1</span>}>
+                                    <SubMenu key="sub1" title={<span><Icon type="user"/>技术分享</span>}>
                                         <Menu.Item key="1">option1</Menu.Item>
                                         <Menu.Item key="2">option2</Menu.Item>
                                         <Menu.Item key="3">option3</Menu.Item>
                                         <Menu.Item key="4">option4</Menu.Item>
                                     </SubMenu>
-                                    <SubMenu key="sub2" title={<span><Icon type="laptop"/>subnav 2</span>}>
+                                    <SubMenu key="sub2" title={<span><Icon type="laptop"/>图书推荐</span>}>
                                         <Menu.Item key="5">option5</Menu.Item>
                                         <Menu.Item key="6">option6</Menu.Item>
                                         <Menu.Item key="7">option7</Menu.Item>
                                         <Menu.Item key="8">option8</Menu.Item>
                                     </SubMenu>
-                                    <SubMenu key="sub3" title={<span><Icon type="notification"/>subnav 3</span>}>
+                                    <SubMenu key="sub3" title={<span><Icon type="notification"/>个人感悟</span>}>
                                         <Menu.Item key="9">option9</Menu.Item>
                                         <Menu.Item key="10">option10</Menu.Item>
                                         <Menu.Item key="11">option11</Menu.Item>
