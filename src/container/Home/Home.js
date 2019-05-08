@@ -1,5 +1,5 @@
 import React from 'react'
-import {Layout, Menu, Icon, Carousel, Skeleton, BackTop, Drawer} from 'antd'
+import {Layout, Menu, Icon, Carousel, Skeleton, BackTop, Drawer, Spin} from 'antd'
 import history from '../../history'
 import Logo from '../../../src/img/logo.jpg'
 import AboutMe from "../AboutMe";
@@ -14,13 +14,16 @@ class Home extends React.Component {
         this.renderDrawer = this.renderDrawer.bind(this);
         this.hiddenMe = this.hiddenMe.bind(this);
         this.getInitData = this.getInitData.bind(this);
+        this.simulationLoading = this.simulationLoading.bind(this);
         this.state = {
+            loading: true,
             visible: false,
             placement: 'right'
         }
     }
 
     componentDidMount() {
+        this.simulationLoading();
         this.getInitData();
     }
 
@@ -41,6 +44,14 @@ class Home extends React.Component {
         this.setState({
             visible: true
         })
+    }
+
+    simulationLoading(){
+       setTimeout(()=>{
+           this.setState({
+               loading: false
+           })
+       },500)
     }
 
     hiddenMe() {
@@ -67,6 +78,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className={'homeStyle'}>
+                <Spin spinning={this.state.loading} tip="try find something...">
                 <Layout>
                     <Header className="header">
                         <div className="logo"
@@ -140,6 +152,7 @@ class Home extends React.Component {
                     </Footer>
                 </Layout>
                 {this.renderDrawer()}
+                </Spin>
             </div>
         )
     }
