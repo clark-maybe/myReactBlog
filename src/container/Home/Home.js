@@ -2,6 +2,10 @@ import React from 'react'
 import {Layout, Menu, Icon, Carousel, Skeleton, BackTop, Drawer, Spin} from 'antd'
 import history from '../../history'
 import Logo from '../../../src/img/logo.jpg'
+import banner1 from '../../../src/img/banner1.jpg'
+import banner2 from '../../../src/img/banner2.jpg'
+import banner3 from '../../../src/img/banner3.jpg'
+
 import AboutMe from "../AboutMe";
 
 const {SubMenu} = Menu;
@@ -17,7 +21,7 @@ class Home extends React.Component {
         this.simulationLoading = this.simulationLoading.bind(this);
         this.state = {
             loading: true,
-            visible: false,
+            visible: true,
             placement: 'right'
         }
     }
@@ -25,6 +29,7 @@ class Home extends React.Component {
     componentDidMount() {
         this.simulationLoading();
         this.getInitData();
+        document.body.scrollTop = document.documentElement.scrollTop = 200
     }
 
     getInitData(){
@@ -65,7 +70,7 @@ class Home extends React.Component {
             <Drawer
                 title={<span style={{fontWeight: 'bold'}}>about Me</span>}
                 placement={this.state.placement}
-                closable={false}
+                closable={true}
                 onClose={this.hiddenMe}
                 visible={this.state.visible}
                 width={350}
@@ -96,18 +101,18 @@ class Home extends React.Component {
                             <Menu.Item key="home">Home</Menu.Item>
                         </Menu>
                     </Header>
-                    <div style={{width: '100%', height: '650px', marginTop: '1px', marginBottom: '30px'}}>
+                    <div style={{width: '100%', height: '1080px', marginTop: '1px', marginBottom: '30px'}}>
                         <Carousel autoplay>
                             <div>
-                                <img src={'https://img.zcool.cn/community/0172f159c32f3ea8012053f851d65a.jpg@2o.jpg'}
+                                <img src={banner1} style={{width: '100%'}}
                                      alt="banner"/>
                             </div>
                             <div>
-                                <img src={'https://img.zcool.cn/community/0172f159c32f3ea8012053f851d65a.jpg@2o.jpg'}
+                                <img src={banner2} style={{width: '100%'}}
                                      alt="banner"/>
                             </div>
                             <div>
-                                <img src={'https://img.zcool.cn/community/0172f159c32f3ea8012053f851d65a.jpg@2o.jpg'}
+                                <img src={banner3} style={{width: '100%'}}
                                      alt="banner"/>
                             </div>
                         </Carousel>
