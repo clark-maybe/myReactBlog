@@ -1,5 +1,5 @@
 import React from 'react'
-import {Layout, Menu, Icon} from 'antd'
+import {Layout, Menu, Icon, Carousel, Skeleton, BackTop  } from 'antd'
 import Logo from '../../../src/img/logo.jpg'
 
 const {SubMenu} = Menu;
@@ -25,8 +25,21 @@ class Home extends React.Component {
                             <Menu.Item key="aboutMe">About me</Menu.Item>
                         </Menu>
                     </Header>
-                    <Content style={{padding: '0 50px', minHeight: '800px'}}>
-                        <Layout style={{padding: '24px 0', background: '#fff', marginTop: '30px'}}>
+                    <div style={{width: '100%', height: '650px',marginTop: '1px', marginBottom: '30px'}}>
+                        <Carousel autoplay>
+                            <div>
+                                <img src={'https://img.zcool.cn/community/0172f159c32f3ea8012053f851d65a.jpg@2o.jpg'} alt="banner"/>
+                            </div>
+                            <div>
+                                <img src={'https://img.zcool.cn/community/0172f159c32f3ea8012053f851d65a.jpg@2o.jpg'} alt="banner"/>
+                            </div>
+                            <div>
+                                <img src={'https://img.zcool.cn/community/0172f159c32f3ea8012053f851d65a.jpg@2o.jpg'} alt="banner"/>
+                            </div>
+                        </Carousel>
+                    </div>
+                    <Content style={{padding: '0 50px'}}>
+                        <Layout style={{padding: '24px 0', background: '#fff'}}>
                             <Sider width={200} style={{background: '#3da8ff'}}>
                                 <Menu
                                     mode="inline"
@@ -55,11 +68,12 @@ class Home extends React.Component {
                                 </Menu>
                             </Sider>
                             <Content style={{padding: '0 24px', minHeight: 280}}>
-                                Content
+                                <Skeleton active />
                             </Content>
                         </Layout>
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
+                        <BackTop visibilityHeight={100}/>
                         Created by <span style={{fontWeight: 'bold', fontSize: '15px'}}>Clark</span> with React
                     </Footer>
                 </Layout>
