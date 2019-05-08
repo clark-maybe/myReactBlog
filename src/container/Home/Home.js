@@ -7,33 +7,33 @@ const {SubMenu} = Menu;
 const {Header, Content, Footer, Sider} = Layout;
 
 class Home extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.showMe = this.showMe.bind(this);
         this.renderDrawer = this.renderDrawer.bind(this);
         this.hiddenMe = this.hiddenMe.bind(this);
-        this.state={
+        this.state = {
             visible: false,
             placement: 'right'
         }
     }
 
-    showMe(){
+    showMe() {
         this.setState({
             visible: true
         })
     }
 
-    hiddenMe(){
+    hiddenMe() {
         this.setState({
             visible: false
         })
     }
 
-    renderDrawer(){
-        return(
+    renderDrawer() {
+        return (
             <Drawer
-                title={<span style={{fontWeight:'bold'}}>about Me</span>}
+                title={<span style={{fontWeight: 'bold'}}>about Me</span>}
                 placement={this.state.placement}
                 closable={false}
                 onClose={this.hiddenMe}
@@ -62,7 +62,6 @@ class Home extends React.Component {
                             style={{lineHeight: '64px', display: 'inline-block'}}
                         >
                             <Menu.Item key="home">Home</Menu.Item>
-                            <Menu.Item key="aboutMe">About me</Menu.Item>
                         </Menu>
                     </Header>
                     <div style={{width: '100%', height: '650px', marginTop: '1px', marginBottom: '30px'}}>
