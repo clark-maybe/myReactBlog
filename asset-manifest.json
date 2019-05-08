@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/my-react-app/static/css/main.fd4d78ba.chunk.css",
+    "main.js": "/my-react-app/static/js/main.4aa6cc82.chunk.js",
+    "main.js.map": "/my-react-app/static/js/main.4aa6cc82.chunk.js.map",
+    "runtime~main.js": "/my-react-app/static/js/runtime~main.f5ab8794.js",
+    "runtime~main.js.map": "/my-react-app/static/js/runtime~main.f5ab8794.js.map",
+    "static/css/2.4358233e.chunk.css": "/my-react-app/static/css/2.4358233e.chunk.css",
+    "static/js/2.affb0d92.chunk.js": "/my-react-app/static/js/2.affb0d92.chunk.js",
+    "static/js/2.affb0d92.chunk.js.map": "/my-react-app/static/js/2.affb0d92.chunk.js.map",
+    "index.html": "/my-react-app/index.html",
+    "precache-manifest.945d09e9f06aee93e7c8ec7ebd4618b2.js": "/my-react-app/precache-manifest.945d09e9f06aee93e7c8ec7ebd4618b2.js",
+    "service-worker.js": "/my-react-app/service-worker.js",
+    "static/css/2.4358233e.chunk.css.map": "/my-react-app/static/css/2.4358233e.chunk.css.map",
+    "static/css/main.fd4d78ba.chunk.css.map": "/my-react-app/static/css/main.fd4d78ba.chunk.css.map",
+    "static/media/banner1.jpg": "/my-react-app/static/media/banner1.790b1975.jpg",
+    "static/media/banner2.jpg": "/my-react-app/static/media/banner2.57c4fb01.jpg",
+    "static/media/banner3.jpg": "/my-react-app/static/media/banner3.87b16c21.jpg",
+    "static/media/logo.jpg": "/my-react-app/static/media/logo.bb4ea064.jpg"
+  }
+}
