@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/my-react-app/static/css/main.fd4d78ba.chunk.css",
-    "main.js": "/my-react-app/static/js/main.89d2976e.chunk.js",
-    "main.js.map": "/my-react-app/static/js/main.89d2976e.chunk.js.map",
-    "runtime~main.js": "/my-react-app/static/js/runtime~main.f5ab8794.js",
-    "runtime~main.js.map": "/my-react-app/static/js/runtime~main.f5ab8794.js.map",
-    "static/css/2.4358233e.chunk.css": "/my-react-app/static/css/2.4358233e.chunk.css",
-    "static/js/2.67642dda.chunk.js": "/my-react-app/static/js/2.67642dda.chunk.js",
-    "static/js/2.67642dda.chunk.js.map": "/my-react-app/static/js/2.67642dda.chunk.js.map",
-    "index.html": "/my-react-app/index.html",
-    "precache-manifest.f0cddc811468a31737af2f843c98b348.js": "/my-react-app/precache-manifest.f0cddc811468a31737af2f843c98b348.js",
-    "service-worker.js": "/my-react-app/service-worker.js",
-    "static/css/2.4358233e.chunk.css.map": "/my-react-app/static/css/2.4358233e.chunk.css.map",
-    "static/css/main.fd4d78ba.chunk.css.map": "/my-react-app/static/css/main.fd4d78ba.chunk.css.map",
-    "static/media/banner1.jpg": "/my-react-app/static/media/banner1.790b1975.jpg",
-    "static/media/banner2.jpg": "/my-react-app/static/media/banner2.57c4fb01.jpg",
-    "static/media/banner3.jpg": "/my-react-app/static/media/banner3.87b16c21.jpg",
-    "static/media/logo.jpg": "/my-react-app/static/media/logo.bb4ea064.jpg"
+    "main.css": "/myReactBlog/static/css/main.d0f3fb83.chunk.css",
+    "main.js": "/myReactBlog/static/js/main.51dd6e0d.chunk.js",
+    "main.js.map": "/myReactBlog/static/js/main.51dd6e0d.chunk.js.map",
+    "runtime~main.js": "/myReactBlog/static/js/runtime~main.c64f0c34.js",
+    "runtime~main.js.map": "/myReactBlog/static/js/runtime~main.c64f0c34.js.map",
+    "static/css/2.4358233e.chunk.css": "/myReactBlog/static/css/2.4358233e.chunk.css",
+    "static/js/2.85192ae1.chunk.js": "/myReactBlog/static/js/2.85192ae1.chunk.js",
+    "static/js/2.85192ae1.chunk.js.map": "/myReactBlog/static/js/2.85192ae1.chunk.js.map",
+    "index.html": "/myReactBlog/index.html",
+    "precache-manifest.2652ec3947d30adc38b555f9c717a55b.js": "/myReactBlog/precache-manifest.2652ec3947d30adc38b555f9c717a55b.js",
+    "service-worker.js": "/myReactBlog/service-worker.js",
+    "static/css/2.4358233e.chunk.css.map": "/myReactBlog/static/css/2.4358233e.chunk.css.map",
+    "static/css/main.d0f3fb83.chunk.css.map": "/myReactBlog/static/css/main.d0f3fb83.chunk.css.map",
+    "static/media/banner1.jpg": "/myReactBlog/static/media/banner1.790b1975.jpg",
+    "static/media/banner2.jpg": "/myReactBlog/static/media/banner2.57c4fb01.jpg",
+    "static/media/banner3.jpg": "/myReactBlog/static/media/banner3.87b16c21.jpg",
+    "static/media/logo.jpg": "/myReactBlog/static/media/logo.bb4ea064.jpg"
   }
 }
