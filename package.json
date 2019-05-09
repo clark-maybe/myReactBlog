@@ -1,7 +1,7 @@
 {
   "name": "my-blog",
   "version": "0.1.0",
-  "homepage": "https://fanliang8023.github.io/my-react-app",
+  "homepage": "https://fanliang8023.github.io/myReactBlog",
   "private": true,
   "dependencies": {
     "antd": "^3.17.0",
