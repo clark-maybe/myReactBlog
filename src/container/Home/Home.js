@@ -56,7 +56,12 @@ class Home extends React.Component {
            this.setState({
                loading: false
            })
-       },500)
+       },500);
+        setTimeout(()=>{
+            this.setState({
+                visible: false
+            })
+        },4000)
     }
 
     hiddenMe() {
