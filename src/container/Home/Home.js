@@ -29,7 +29,8 @@ class Home extends React.Component {
             visible: true,
             placement: 'right',
             showContent: '',
-            bannerFlag: 'block'
+            bannerFlag: 'block',
+            siderFlag: 'block'
         }
     }
 
@@ -94,6 +95,15 @@ class Home extends React.Component {
 
     menuClick(item, key, keyPath) {
         const self = this;
+        if (item.key !== 'home') {
+            self.setState({
+                siderFlag: 'none'
+            })
+        } else {
+            self.setState({
+                siderFlag: 'block'
+            })
+        }
         self.contentLoading(true);
         self.setState({
             showContent: item.key
@@ -193,9 +203,9 @@ class Home extends React.Component {
                                 </div>
                             </Carousel>
                         </div>
-                        <Content style={{padding: '0 50px', minHeight: '800px',marginTop: '15px'}}>
+                        <Content style={{padding: '0 50px', minHeight: '800px', marginTop: '15px'}}>
                             <Layout style={{padding: '24px 0', background: '#fff'}}>
-                                <Sider width={200} style={{background: '#3da8ff'}}>
+                                <Sider width={200} style={{background: '#3da8ff', display: this.state.siderFlag}}>
                                     <Menu
                                         mode="inline"
                                         defaultSelectedKeys={['1']}
