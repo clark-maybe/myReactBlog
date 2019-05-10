@@ -1,15 +1,43 @@
 import React from 'react'
-import {Layout, Menu, Icon, Carousel, Skeleton, BackTop, Drawer, Spin, Affix, Button} from 'antd'
+import {Layout, Menu, Icon, Carousel, BackTop, Drawer, Spin, Affix, Button, Modal} from 'antd'
+import {Switch, Route, Link} from 'react-router-dom'
+import Loadable from 'react-loadable';
 import history from '../../history'
 import Logo from '../../../src/img/logo.jpg'
 import banner1 from '../../../src/img/banner1.jpg'
 import banner2 from '../../../src/img/banner2.jpg'
 import banner3 from '../../../src/img/banner3.jpg'
 import AboutMe from "../AboutMe";
-import WorkExperience from '../WorkExperience'
+import NoMatch from '../NoMatch'
 
 const {SubMenu} = Menu;
 const {Header, Content, Footer, Sider} = Layout;
+
+
+const WorkExperience = Loadable({
+    loader: () => import('../WorkExperience'),
+    loading: MyLoadingComponent,
+    timeout: 1000
+});
+
+function MyLoadingComponent(props) {
+    if (props.error) {
+        Modal.info({
+            title: '系统升级提醒',
+            content: '系统已经升级，需要重新加载系统',
+            onOk() {
+                window.location.replace(window.location.href);
+            },
+        });
+        return <div style={{ height:200,textAlign:"center",lineHeight:"200px",color:"red"}}>系统已升级，请刷新页面或重新打开</div>;
+    } else if (props.pastDelay) {
+        return <div style={{top:'50%',left:'50%',width:'100%',height:'100%',position:'absolute'}}>
+            <Icon type="loading" size='lg' />
+        </div>;
+    } else {
+        return null;
+    }
+}
 
 class Home extends React.Component {
     constructor(props) {
@@ -19,8 +47,6 @@ class Home extends React.Component {
         this.hiddenMe = this.hiddenMe.bind(this);
         this.getInitData = this.getInitData.bind(this);
         this.simulationLoading = this.simulationLoading.bind(this);
-        this.menuClick = this.menuClick.bind(this);
-        this.renderContent = this.renderContent.bind(this);
         this.contentLoading = this.contentLoading.bind(this);
         this.hiddenBanner = this.hiddenBanner.bind(this);
         this.state = {
@@ -28,7 +54,6 @@ class Home extends React.Component {
             contentLoading: false,
             visible: true,
             placement: 'right',
-            showContent: '',
             bannerFlag: 'block',
             siderFlag: 'block'
         }
@@ -46,7 +71,7 @@ class Home extends React.Component {
                 return res.json();
             })
             .then((common) => {
-                //TODO 数据固化
+
             })
             .catch(() => {
                 history.push('/');
@@ -93,43 +118,6 @@ class Home extends React.Component {
         )
     }
 
-    menuClick(item, key, keyPath) {
-        const self = this;
-        if (item.key !== 'home') {
-            self.setState({
-                siderFlag: 'none'
-            })
-        } else {
-            self.setState({
-                siderFlag: 'block'
-            })
-        }
-        self.contentLoading(true);
-        self.setState({
-            showContent: item.key
-        }, () => {
-            self.contentLoading(false);
-        })
-    }
-
-    renderContent() {
-        let showContent = this.state.showContent;
-        switch (showContent) {
-            case '':
-                return (
-                    <Skeleton active/>
-                );
-            case 'workExperience':
-                return (
-                    <WorkExperience/>
-                );
-            default:
-                return (
-                    <Skeleton active/>
-                )
-        }
-    }
-
     contentLoading(isLoading) {
         if (isLoading) {
             this.setState({
@@ -163,12 +151,19 @@ class Home extends React.Component {
                             <Menu
                                 theme="dark"
                                 mode="horizontal"
-                                onClick={this.menuClick}
                                 defaultSelectedKeys={['home']}
                                 style={{lineHeight: '64px', display: 'inline-block'}}
                             >
-                                <Menu.Item key="home">Home</Menu.Item>
-                                <Menu.Item key="workExperience">workExperience</Menu.Item>
+                                <Menu.Item key="home">
+                                    <Link to={'/'}>
+                                        Home
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item key="WorkExperience">
+                                    <Link to={'/workExperience'}>
+                                        workExperience
+                                    </Link>
+                                </Menu.Item>
                             </Menu>
                         </Header>
                         <div style={{
@@ -234,7 +229,10 @@ class Home extends React.Component {
                                 </Sider>
                                 <Content style={{padding: '0 24px', minHeight: 280}}>
                                     <Spin spinning={this.state.contentLoading} tip="try find content...">
-                                        {this.renderContent()}
+                                        <Switch>
+                                            <Route path="/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
+                                            <Route component={NoMatch}/>
+                                        </Switch>
                                     </Spin>
                                 </Content>
                             </Layout>
