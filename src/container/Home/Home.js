@@ -29,10 +29,11 @@ function MyLoadingComponent(props) {
                 window.location.replace(window.location.href);
             },
         });
-        return <div style={{ height:200,textAlign:"center",lineHeight:"200px",color:"red"}}>系统已升级，请刷新页面或重新打开</div>;
+        return <div
+            style={{height: 200, textAlign: "center", lineHeight: "200px", color: "red"}}>系统已升级，请刷新页面或重新打开</div>;
     } else if (props.pastDelay) {
-        return <div style={{top:'50%',left:'50%',width:'100%',height:'100%',position:'absolute'}}>
-            <Icon type="loading" size='lg' />
+        return <div style={{top: '50%', left: '50%', width: '100%', height: '100%', position: 'absolute'}}>
+            <Icon type="loading" size='lg'/>
         </div>;
     } else {
         return null;
@@ -60,6 +61,7 @@ class Home extends React.Component {
     componentDidMount() {
         this.simulationLoading();
         this.getInitData();
+        history.push('/myReactBlog');
         document.body.scrollTop = document.documentElement.scrollTop = 200
     }
 
@@ -72,7 +74,7 @@ class Home extends React.Component {
 
             })
             .catch(() => {
-                history.push('/');
+                history.push('/myReactBlog');
             });
     }
 
@@ -92,7 +94,7 @@ class Home extends React.Component {
             this.setState({
                 visible: false
             })
-        }, 4000)
+        }, 5000)
     }
 
     hiddenMe() {
@@ -141,12 +143,12 @@ class Home extends React.Component {
                                 style={{lineHeight: '64px', display: 'inline-block'}}
                             >
                                 <Menu.Item key="home">
-                                    <Link to={'/'}>
+                                    <Link to={'/myReactBlog'}>
                                         Home
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item key="WorkExperience">
-                                    <Link to={'/workExperience'}>
+                                    <Link to={'/myReactBlog/workExperience'}>
                                         workExperience
                                     </Link>
                                 </Menu.Item>
@@ -189,7 +191,7 @@ class Home extends React.Component {
                                 <Sider width={200} style={{background: '#3da8ff', display: this.state.siderFlag}}>
                                     <Menu
                                         mode="inline"
-                                        defaultSelectedKeys={['1']}
+                                        // defaultSelectedKeys={['1']}
                                         defaultOpenKeys={['sub1']}
                                         style={{height: '100%'}}
                                     >
@@ -214,10 +216,10 @@ class Home extends React.Component {
                                     </Menu>
                                 </Sider>
                                 <Content style={{padding: '0 24px', minHeight: 280}}>
-                                        <Switch>
-                                            <Route path="/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
-                                            <Route component={NoMatch}/>
-                                        </Switch>
+                                    <Switch>
+                                        <Route path="/myReactBlog/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
+                                        <Route component={NoMatch}/>
+                                    </Switch>
                                 </Content>
                             </Layout>
                         </Content>

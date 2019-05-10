@@ -13,12 +13,13 @@ class AboutMe extends React.Component {
                 <p>and some personal insights with me,</p>
                 <p>I hope to help you.</p>
                 <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-                <p style={{color: 'rgb(43, 126, 255)',fontSize:'16px',marginBottom:0}}>How to contact me ?</p>
+                <p style={{color: 'rgb(43, 126, 255)', fontSize: '16px', marginBottom: 0}}>How to contact me ?</p>
                 <br/>
-                <p style={{opacity:0.9}}>tel: <span style={{color: 'green'}}>15702455610</span></p>
-                <p style={{opacity:0.9}}>Email: <span style={{color: '#4a4a4a'}}>15702455610@163.com</span></p>
-                <p style={{opacity:0.9}}>blog: <a href="https://fanliang8023.github.io">https://fanliang8023.github.io</a></p>
-                <p style={{opacity:0.9}}>wChat: <span style={{color: 'grey'}}>fanliang8023</span></p>
+                <p style={{opacity: 0.9}}>tel: <span style={{color: 'green'}}>15702455610</span></p>
+                <p style={{opacity: 0.9}}>Email: <span style={{color: '#4a4a4a'}}>15702455610@163.com</span></p>
+                <p style={{opacity: 0.9}}>blog: <a href="https://fanliang8023.github.io"
+                                                   target='_blank'>https://fanliang8023.github.io</a></p>
+                <p style={{opacity: 0.9}}>wChat: <span style={{color: 'grey'}}>fanliang8023</span></p>
             </div>
         )
     }
