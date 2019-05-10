@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/src/img/banner1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/banner1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/img/banner2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/banner2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/img/banner3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/banner3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/logo.jpg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/container/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="143" column="29" selection-start-line="143" selection-start-column="29" selection-end-line="143" selection-end-column="29" />
+            <state relative-caret-position="1750">
+              <caret line="161" column="58" lean-forward="true" selection-start-line="161" selection-start-column="58" selection-end-line="161" selection-end-column="58" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -42,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/container/NoMatch.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -51,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -197,12 +198,12 @@
       <workItem from="1557300541278" duration="15527000" />
       <workItem from="1557385948459" duration="6391000" />
       <workItem from="1557451671360" duration="9851000" />
-      <workItem from="1557469733365" duration="8035000" />
+      <workItem from="1557469733365" duration="9585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42857000" />
+    <option name="totallyTimeSpent" value="44407000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -393,14 +394,14 @@
     <entry file="file://$PROJECT_DIR$/src/container/NoMatch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -413,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/container/Home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="143" column="29" selection-start-line="143" selection-start-column="29" selection-end-line="143" selection-end-column="29" />
+        <state relative-caret-position="1750">
+          <caret line="161" column="58" lean-forward="true" selection-start-line="161" selection-start-column="58" selection-end-line="161" selection-end-column="58" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
