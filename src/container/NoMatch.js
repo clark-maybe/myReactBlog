@@ -3,13 +3,15 @@ import React from 'react'
 class NoMatch extends React.Component {
     render() {
         return (
-            <p style={{
+            <div style={{
                 textAlign: 'center',
                 fontSize: '34px',
                 color: '#969696',
-                marginTop: '115px',
-                opacity: 0.3
-            }}>Thinking different</p>
+                opacity: 0.3,
+                height: '100%',
+            }}>
+                <span style={{display:'inline-block',marginTop: '8%'}}>Thinking different</span>
+            </div>
         )
     }
 }

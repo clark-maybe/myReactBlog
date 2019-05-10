@@ -47,11 +47,9 @@ class Home extends React.Component {
         this.hiddenMe = this.hiddenMe.bind(this);
         this.getInitData = this.getInitData.bind(this);
         this.simulationLoading = this.simulationLoading.bind(this);
-        this.contentLoading = this.contentLoading.bind(this);
         this.hiddenBanner = this.hiddenBanner.bind(this);
         this.state = {
             loading: true,
-            contentLoading: false,
             visible: true,
             placement: 'right',
             bannerFlag: 'block',
@@ -116,18 +114,6 @@ class Home extends React.Component {
                 <AboutMe/>
             </Drawer>
         )
-    }
-
-    contentLoading(isLoading) {
-        if (isLoading) {
-            this.setState({
-                contentLoading: true
-            })
-        } else {
-            this.setState({
-                contentLoading: false
-            })
-        }
     }
 
     hiddenBanner() {
@@ -198,7 +184,7 @@ class Home extends React.Component {
                                 </div>
                             </Carousel>
                         </div>
-                        <Content style={{padding: '0 50px', minHeight: '800px', marginTop: '15px'}}>
+                        <Content style={{padding: '0 50px', minHeight: '785px', marginTop: '15px'}}>
                             <Layout style={{padding: '24px 0', background: '#fff'}}>
                                 <Sider width={200} style={{background: '#3da8ff', display: this.state.siderFlag}}>
                                     <Menu
@@ -228,12 +214,10 @@ class Home extends React.Component {
                                     </Menu>
                                 </Sider>
                                 <Content style={{padding: '0 24px', minHeight: 280}}>
-                                    <Spin spinning={this.state.contentLoading} tip="try find content...">
                                         <Switch>
                                             <Route path="/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
                                             <Route component={NoMatch}/>
                                         </Switch>
-                                    </Spin>
                                 </Content>
                             </Layout>
                         </Content>
