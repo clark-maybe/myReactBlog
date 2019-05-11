@@ -1,14 +1,12 @@
 import React from 'react'
-import {Layout, Menu, Icon, Carousel, BackTop, Drawer, Spin, Affix, Button, Modal} from 'antd'
+import {Layout, Menu, Icon, BackTop, Drawer, Spin, Modal} from 'antd'
 import {Switch, Route, Link} from 'react-router-dom'
 import Loadable from 'react-loadable';
 import history from '../../history'
 import Logo from '../../../src/img/logo.jpg'
-import banner1 from '../../../src/img/banner1.jpg'
-import banner2 from '../../../src/img/banner2.jpg'
-import banner3 from '../../../src/img/banner3.jpg'
 import AboutMe from "../AboutMe";
 import NoMatch from '../NoMatch'
+import HomeBanner from '../HomeBanner'
 
 const {SubMenu} = Menu;
 const {Header, Content, Footer, Sider} = Layout;
@@ -48,12 +46,10 @@ class Home extends React.Component {
         this.hiddenMe = this.hiddenMe.bind(this);
         this.getInitData = this.getInitData.bind(this);
         this.simulationLoading = this.simulationLoading.bind(this);
-        this.hiddenBanner = this.hiddenBanner.bind(this);
         this.state = {
             loading: true,
             visible: true,
             placement: 'right',
-            bannerFlag: 'block',
             siderFlag: 'block'
         }
     }
@@ -118,12 +114,6 @@ class Home extends React.Component {
         )
     }
 
-    hiddenBanner() {
-        this.setState({
-            bannerFlag: 'none'
-        })
-    }
-
     render() {
         return (
             <div className={'homeStyle'}>
@@ -154,38 +144,9 @@ class Home extends React.Component {
                                 </Menu.Item>
                             </Menu>
                         </Header>
-                        <div style={{
-                            width: '100%',
-                            height: '1080px',
-                            marginTop: '1px',
-                            marginBottom: '15px',
-                            display: this.state.bannerFlag
-                        }}>
-                            <Affix offsetTop={10} style={{position: 'absolute', zIndex: 1}}>
-                                <Button
-                                    type="primary"
-                                    onClick={() => {
-                                        this.hiddenBanner()
-                                    }}
-                                >
-                                    hidden Banner
-                                </Button>
-                            </Affix>
-                            <Carousel autoplay>
-                                <div>
-                                    <img src={banner1} style={{width: '100%'}}
-                                         alt="banner"/>
-                                </div>
-                                <div>
-                                    <img src={banner2} style={{width: '100%'}}
-                                         alt="banner"/>
-                                </div>
-                                <div>
-                                    <img src={banner3} style={{width: '100%'}}
-                                         alt="banner"/>
-                                </div>
-                            </Carousel>
-                        </div>
+                        <HomeBanner
+                            siderFlag={this.state.siderFlag}
+                        />
                         <Content style={{padding: '0 50px', minHeight: '785px', marginTop: '15px'}}>
                             <Layout style={{padding: '24px 0', background: '#fff'}}>
                                 <Sider width={200} style={{background: '#3da8ff', display: this.state.siderFlag}}>
