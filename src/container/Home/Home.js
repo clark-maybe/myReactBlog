@@ -7,6 +7,7 @@ import Logo from '../../../src/img/logo.jpg'
 import AboutMe from "../AboutMe";
 import NoMatch from '../NoMatch'
 import HomeBanner from '../HomeBanner'
+import {getData} from '../../until/commonFun'
 
 const {SubMenu} = Menu;
 const {Header, Content, Footer, Sider} = Layout;
@@ -44,7 +45,6 @@ class Home extends React.Component {
         this.showMe = this.showMe.bind(this);
         this.renderDrawer = this.renderDrawer.bind(this);
         this.hiddenMe = this.hiddenMe.bind(this);
-        this.getInitData = this.getInitData.bind(this);
         this.simulationLoading = this.simulationLoading.bind(this);
         this.state = {
             loading: true,
@@ -57,21 +57,13 @@ class Home extends React.Component {
     componentDidMount() {
         this.simulationLoading();
         this.getInitData();
+        getData('./jsonData/init.json', () => {
+            Modal.error({
+                title: 'no data'
+            })
+        });
         history.push('/myReactBlog');
         document.body.scrollTop = document.documentElement.scrollTop = 200
-    }
-
-    getInitData() {
-        fetch('./jsonData/init.json')
-            .then((res) => {
-                return res.json();
-            })
-            .then((common) => {
-
-            })
-            .catch(() => {
-                history.push('/myReactBlog');
-            });
     }
 
     showMe() {
@@ -178,7 +170,8 @@ class Home extends React.Component {
                                 </Sider>
                                 <Content style={{padding: '0 24px', minHeight: 280}}>
                                     <Switch>
-                                        <Route path="/myReactBlog/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
+                                        <Route path="/myReactBlog/workExperience"
+                                               render={(props) => (<WorkExperience {...props}/>)}/>
                                         <Route component={NoMatch}/>
                                     </Switch>
                                 </Content>
