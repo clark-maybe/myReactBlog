@@ -170,8 +170,7 @@ class Home extends React.Component {
                                 </Sider>
                                 <Content style={{padding: '0 24px', minHeight: 280}}>
                                     <Switch>
-                                        <Route path="/myReactBlog/workExperience"
-                                               render={(props) => (<WorkExperience {...props}/>)}/>
+                                        <Route path="/myReactBlog/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
                                         <Route component={NoMatch}/>
                                     </Switch>
                                 </Content>
