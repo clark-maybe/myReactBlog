@@ -56,7 +56,6 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.simulationLoading();
-        this.getInitData();
         getData('./jsonData/init.json', () => {
             Modal.error({
                 title: 'no data'
@@ -86,6 +85,7 @@ class Home extends React.Component {
     }
 
     hiddenMe() {
+        console.log(this);
         this.setState({
             visible: false
         })
