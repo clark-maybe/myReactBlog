@@ -62,7 +62,7 @@ class Home extends React.Component {
             })
         });
         history.push('/myReactBlog');
-        document.body.scrollTop = document.documentElement.scrollTop = 200
+        document.body.scrollTop = document.documentElement.scrollTop = 200;
     }
 
     showMe() {
