@@ -19,6 +19,12 @@ const WorkExperience = Loadable({
     timeout: 1000
 });
 
+const Italy = Loadable({
+    loader: () => import('../analysis/Italy'),
+    loading: MyLoadingComponent,
+    timeout: 1000
+});
+
 function MyLoadingComponent(props) {
     if (props.error) {
         Modal.info({
@@ -56,11 +62,11 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.simulationLoading();
-        getData('./jsonData/init.json', () => {
-            Modal.error({
-                title: 'no data'
-            })
-        });
+        // getData('./jsonData/init.json', () => {
+        //     Modal.error({
+        //         title: 'no data'
+        //     })
+        // });
         history.push('/myReactBlog');
         document.body.scrollTop = document.documentElement.scrollTop = 200;
     }
@@ -148,29 +154,19 @@ class Home extends React.Component {
                                         defaultOpenKeys={['sub1']}
                                         style={{height: '100%'}}
                                     >
-                                        <SubMenu key="sub1" title={<span><Icon type="user"/>技术分享</span>}>
-                                            <Menu.Item key="1">option1</Menu.Item>
-                                            <Menu.Item key="2">option2</Menu.Item>
-                                            <Menu.Item key="3">option3</Menu.Item>
-                                            <Menu.Item key="4">option4</Menu.Item>
-                                        </SubMenu>
-                                        <SubMenu key="sub2" title={<span><Icon type="laptop"/>图书推荐</span>}>
-                                            <Menu.Item key="5">option5</Menu.Item>
-                                            <Menu.Item key="6">option6</Menu.Item>
-                                            <Menu.Item key="7">option7</Menu.Item>
-                                            <Menu.Item key="8">option8</Menu.Item>
-                                        </SubMenu>
-                                        <SubMenu key="sub3" title={<span><Icon type="notification"/>个人感悟</span>}>
-                                            <Menu.Item key="9">option9</Menu.Item>
-                                            <Menu.Item key="10">option10</Menu.Item>
-                                            <Menu.Item key="11">option11</Menu.Item>
-                                            <Menu.Item key="12">option12</Menu.Item>
+                                        <SubMenu key="sub1" title={<span><Icon type="notification"/>数据统计</span>}>
+                                            <Menu.Item key="first">
+                                                <Link to={'/myReactBlog/analysis/Italy'}>
+                                                    意大利
+                                                </Link>
+                                            </Menu.Item>
                                         </SubMenu>
                                     </Menu>
                                 </Sider>
                                 <Content style={{padding: '0 24px', minHeight: 280}}>
                                     <Switch>
                                         <Route path="/myReactBlog/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
+                                        <Route path="/myReactBlog/analysis/Italy" render={(props) => (<Italy {...props}/>)}/>
                                         <Route component={NoMatch}/>
                                     </Switch>
                                 </Content>
