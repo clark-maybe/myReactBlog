@@ -91,7 +91,6 @@ class Home extends React.Component {
     }
 
     hiddenMe() {
-        console.log(this);
         this.setState({
             visible: false
         })

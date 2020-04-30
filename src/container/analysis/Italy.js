@@ -1,16 +1,16 @@
 import React from 'react'
-import { Radio, Row, Col } from 'antd';
 import ReactEcharts from 'echarts-for-react';
 import { fromJS } from 'immutable';
+import CalendarTable from '../analysis/CalendarTable';
 
-const RadioGroup = Radio.Group;
 
 class Italy extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             eChartsDim: fromJS([]),
-            eChartsData: fromJS([])
+            eChartsData: fromJS([]),
+            source: fromJS([])
         };
     }
 
@@ -57,6 +57,10 @@ class Italy extends React.Component {
         }
     };
 
+    onChange = (source, e) => {
+      this.setState({ source: source });
+    };
+
     render() {
         const { eChartsDim } = this.state;
         let divHeight = 702 + 'px';
@@ -68,7 +72,11 @@ class Italy extends React.Component {
                     marginTop: 5
                 }}
             >
-                <ReactEcharts style={{ height: '480px', paddingRight: '24px' }} option={this.getChartOption()} />
+                {/*<ReactEcharts style={{ height: '480px', paddingRight: '24px' }} option={this.getChartOption()} />*/}
+                <CalendarTable
+                    onChange={this.onChange}
+                    source={this.state.source}
+                />
             </div>
         )
     }

@@ -1,35 +1,74 @@
 @import '~antd/dist/antd.css';
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*时间节点选择器*/
+.calendar-table .calendar-head > tr > th {
+    text-align: center;
+}
+
+.calendar-table .calendar-head > tr > td {
+    text-align: center;
+}
+
+.calendar-table .calendar-body > tr > td {
+    width: 15px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+}
+
+.calendar-table .calendar-body > tr > .calendar-td {
+    cursor: pointer;
+    transition: all;
+}
+
+.calendar-table .calendar-body > tr .hasChoice {
+    background-color: #1890ff;
+}
+
+.calendar-table .calendar-body .calendar-td-title {
+    border: none;
+    width: auto;
+    height: auto;
+}
+
+.container-calendar-table a{
+    margin: 5px;
+}
+
+.container-calendar-table .calendar-table .calendar-body .calendar-td:hover{
+    background-color: #aed8ff;
 }
