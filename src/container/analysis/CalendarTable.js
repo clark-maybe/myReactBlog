@@ -99,51 +99,33 @@ export default class CalendarTable extends React.Component {
         let s, e, index;
         if (timeList.length === 1) {
             //只有一个节点
-            temp.push(`${getStr(timeList[0], 1)} ~ ${getStr(timeList[0], 0)}`);
+            temp.push(`${this.getStr(timeList[0], 1)} ~ ${this.getStr(timeList[0], 0)}`);
         } else {
             //多节点
             for (let i = 0; i < timeList.length; i++) {
                 if (typeof index === 'undefined') {
                     //第一个节点
-                    s = getStr(timeList[i], 1);
-                    e = getStr(timeList[i], 0);
+                    s = this.getStr(timeList[i], 1);
+                    e = this.getStr(timeList[i], 0);
                     index = timeList[i];
                     continue;
                 }
 
                 if (index === timeList[i] - 1) {
                     //上下节点相同
-                    e = getStr(timeList[i], 0);
+                    e = this.getStr(timeList[i], 0);
                     index = timeList[i];
                 } else {
                     //上下节点不同
                     temp.push(`${s} ~ ${e}`);
-                    s = getStr(timeList[i], 1);
-                    e = getStr(timeList[i], 0);
+                    s = this.getStr(timeList[i], 1);
+                    e = this.getStr(timeList[i], 0);
                     index = timeList[i];
                 }
             }
             temp.push(`${s} ~ ${e}`);
         }
         return <span>{temp.join(' ')}</span>;
-
-        function getStr(item, isS) {
-            if (isS) {
-                //开始
-                if (item % 2 === 0) {
-                    return `${~~(item / 2)}:00`;
-                } else {
-                    return `${~~(item / 2)}:30`;
-                }
-            } else {
-                //结束
-                if (item % 2 === 0) {
-                    return `${~~(item / 2)}:30`;
-                } else {
-                    return `${~~(item / 2) + 1}:00`;
-                }
-            }
-        }
     };
 
     getStr = (item, isS) => {
