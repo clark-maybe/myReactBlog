@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e1f1787-6f73-4f6e-b1c1-283872826501" name="Default Changelist" comment="clark">
-      <change afterPath="$PROJECT_DIR$/src/container/analysis/CalendarTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/analysis/Italy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/analysis/Italy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/analysis/CalendarTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/analysis/CalendarTable.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,20 +52,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="37" selection-start-line="37" selection-end-line="73" selection-end-column="1" />
+            <state relative-caret-position="562">
+              <caret line="57" column="48" lean-forward="true" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/container/analysis/CalendarTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="38" column="49" selection-end-line="232" />
+            <state relative-caret-position="310">
+              <caret line="199" column="49" lean-forward="true" selection-start-line="199" selection-start-column="49" selection-end-line="199" selection-end-column="49" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -144,8 +141,8 @@
         <option value="$PROJECT_DIR$/src/container/analysis/calendarTable.less" />
         <option value="$PROJECT_DIR$/src/container/analysis/CalendarTable.less" />
         <option value="$PROJECT_DIR$/src/container/Home/Home.js" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/container/analysis/Italy.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/container/analysis/CalendarTable.js" />
       </list>
     </option>
@@ -302,12 +299,12 @@
       <workItem from="1587991150005" duration="1645000" />
       <workItem from="1588037075713" duration="11071000" />
       <workItem from="1588061238387" duration="791000" />
-      <workItem from="1588145526286" duration="21596000" />
+      <workItem from="1588145526286" duration="23867000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118100000" />
+    <option name="totallyTimeSpent" value="120371000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -626,20 +623,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/analysis/CalendarTable.js">
+    <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="38" column="49" selection-end-line="232" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="562">
+          <caret line="57" column="48" lean-forward="true" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
+    <entry file="file://$PROJECT_DIR$/src/container/analysis/CalendarTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="37" selection-start-line="37" selection-end-line="73" selection-end-column="1" />
+        <state relative-caret-position="310">
+          <caret line="199" column="49" lean-forward="true" selection-start-line="199" selection-start-column="49" selection-end-line="199" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

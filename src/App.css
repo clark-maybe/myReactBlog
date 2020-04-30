@@ -70,5 +70,9 @@
 }
 
 .container-calendar-table .calendar-table .calendar-body .calendar-td:hover{
-    background-color: #aed8ff;
+    background-color: #e8f4ff;
+}
+
+.calendar-table .calendar-body > tr .hasChoice:hover {
+    background-color: #1890ff!important;
 }

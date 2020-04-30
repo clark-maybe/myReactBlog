@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Popover} from 'antd';
+import {Row, Tooltip} from 'antd';
 import {fromJS} from 'immutable';
 
 /**
@@ -193,14 +193,16 @@ export default class CalendarTable extends React.Component {
                                     {
                                         this.state.timeList.map((innerItem, innerIndex) => {
                                             return (
-                                                <Popover
-                                                    content={`${this.state.weekList[index]} - ${this.getStr(innerIndex, 1)} ~ ${this.getStr(innerIndex, 0)}`}
+                                                <Tooltip
+                                                    placement="top"
+                                                    mouseEnterDelay={0.5}
+                                                    title={`${this.state.weekList[index]} - ${this.getStr(innerIndex, 1)} ~ ${this.getStr(innerIndex, 0)}`}
                                                 >
                                                     <td data-week={index} data-time={innerIndex}
                                                         key={`${index}_${innerIndex}`}
                                                         onClick={e => this.handleClick(index, innerIndex, e)}
                                                         className={`calendar-td ${this.findChoice(index, innerIndex) ? 'hasChoice' : ''}`}/>
-                                                </Popover>
+                                                </Tooltip>
                                             )
                                         })
                                     }
