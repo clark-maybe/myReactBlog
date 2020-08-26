@@ -19,8 +19,8 @@ const WorkExperience = Loadable({
     timeout: 1000
 });
 
-const Italy = Loadable({
-    loader: () => import('../analysis/Italy'),
+const FlowChart = Loadable({
+    loader: () => import('../analysis/FlowChart'),
     loading: MyLoadingComponent,
     timeout: 1000
 });
@@ -155,8 +155,8 @@ class Home extends React.Component {
                                     >
                                         <SubMenu key="sub1" title={<span><Icon type="notification"/>数据统计</span>}>
                                             <Menu.Item key="first">
-                                                <Link to={'/myReactBlog/analysis/Italy'}>
-                                                    意大利
+                                                <Link to={'/myReactBlog/analysis/flowChart'}>
+                                                    流程图
                                                 </Link>
                                             </Menu.Item>
                                         </SubMenu>
@@ -165,7 +165,7 @@ class Home extends React.Component {
                                 <Content style={{padding: '0 24px', minHeight: 280}}>
                                     <Switch>
                                         <Route path="/myReactBlog/workExperience" render={(props) => (<WorkExperience {...props}/>)}/>
-                                        <Route path="/myReactBlog/analysis/Italy" render={(props) => (<Italy {...props}/>)}/>
+                                        <Route path="/myReactBlog/analysis/flowChart" render={(props) => (<FlowChart {...props}/>)}/>
                                         <Route component={NoMatch}/>
                                     </Switch>
                                 </Content>

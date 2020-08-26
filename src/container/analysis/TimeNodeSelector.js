@@ -1,13 +1,12 @@
 import React from 'react'
-import {Row, Tooltip} from 'antd';
-import {fromJS} from 'immutable';
+import {Tooltip} from 'antd';
 
 /**
- * 时间节点选择器
- * source - immutable
- * onChange - callback 在节点更改时触发 (source_immutable, e)
+ * TimeNodeSelector
+ * source
+ * onChange - callback (source, e)
  */
-export default class CalendarTable extends React.Component {
+export default class TimeNodeSelector extends React.Component {
     constructor(props) {
         super(props);
         let hourList = [];
@@ -26,27 +25,23 @@ export default class CalendarTable extends React.Component {
     }
 
     handleClick = (index, innerIndex, e) => {
-        let tempSource = this.props.source.toJS();
+        let tempSource = deepCopy(this.props.source);
         if (this.findChoice(index, innerIndex)) {
-            //已经选中
             for (let i = 0; i < tempSource.length; i++) {
                 if (tempSource[i][0] === index && tempSource[i][1] === innerIndex) {
                     tempSource.splice(i, 1);
                 }
             }
         } else {
-            //未选中
             tempSource.push([index, innerIndex]);
         }
-        this.props.onChange(fromJS(tempSource), e);
+        this.props.onChange(tempSource, e);
     };
 
-    //清空
     handleClear = () => {
-        this.props.onChange(fromJS([]), null);
+        this.props.onChange([], null);
     };
 
-    //全选
     handleChoiceAll = () => {
         let temp = [];
         for (let i = 0; i < 7; i++) {
@@ -54,12 +49,11 @@ export default class CalendarTable extends React.Component {
                 temp.push([i, j]);
             }
         }
-        this.props.onChange(fromJS(temp), null);
+        this.props.onChange(temp, null);
     };
 
-    //查找源数据中是否已经选中
     findChoice = (index, innerIndex) => {
-        const tempSource = this.props.source.toJS();
+        const tempSource = deepCopy(this.props.source);
         for (let i = 0; i < tempSource.length; i++) {
             if (tempSource[i][0] === index && tempSource[i][1] === innerIndex) {
                 return true;
@@ -68,9 +62,8 @@ export default class CalendarTable extends React.Component {
         return false;
     };
 
-    //源数据转换中文
     transformCN = () => {
-        const tempSource = this.props.source.toJS();
+        const tempSource = deepCopy(this.props.source);
         let temp = [];
         let tempArr = [];
         tempSource.map(item => temp.push(item[0]));
@@ -93,18 +86,14 @@ export default class CalendarTable extends React.Component {
         return tempArr;
     };
 
-    //加载时间节点dom
     renderTimeNode = timeList => {
         let temp = [];
         let s, e, index;
         if (timeList.length === 1) {
-            //只有一个节点
             temp.push(`${this.getStr(timeList[0], 1)} ~ ${this.getStr(timeList[0], 0)}`);
         } else {
-            //多节点
             for (let i = 0; i < timeList.length; i++) {
                 if (typeof index === 'undefined') {
-                    //第一个节点
                     s = this.getStr(timeList[i], 1);
                     e = this.getStr(timeList[i], 0);
                     index = timeList[i];
@@ -112,11 +101,9 @@ export default class CalendarTable extends React.Component {
                 }
 
                 if (index === timeList[i] - 1) {
-                    //上下节点相同
                     e = this.getStr(timeList[i], 0);
                     index = timeList[i];
                 } else {
-                    //上下节点不同
                     temp.push(`${s} ~ ${e}`);
                     s = this.getStr(timeList[i], 1);
                     e = this.getStr(timeList[i], 0);
@@ -130,14 +117,12 @@ export default class CalendarTable extends React.Component {
 
     getStr = (item, isS) => {
         if (isS) {
-            //开始
             if (item % 2 === 0) {
                 return `${~~(item / 2)}:00`;
             } else {
                 return `${~~(item / 2)}:30`;
             }
         } else {
-            //结束
             if (item % 2 === 0) {
                 return `${~~(item / 2)}:30`;
             } else {
@@ -180,10 +165,12 @@ export default class CalendarTable extends React.Component {
                                                     mouseEnterDelay={0.5}
                                                     title={`${this.state.weekList[index]} - ${this.getStr(innerIndex, 1)} ~ ${this.getStr(innerIndex, 0)}`}
                                                 >
-                                                    <td data-week={index} data-time={innerIndex}
+                                                    <td
+                                                        data-week={index} data-time={innerIndex}
                                                         key={`${index}_${innerIndex}`}
                                                         onClick={e => this.handleClick(index, innerIndex, e)}
-                                                        className={`calendar-td ${this.findChoice(index, innerIndex) ? 'hasChoice' : ''}`}/>
+                                                        className={`calendar-td ${this.findChoice(index, innerIndex) ? 'hasChoice' : ''}`}
+                                                    />
                                                 </Tooltip>
                                             )
                                         })
@@ -194,10 +181,10 @@ export default class CalendarTable extends React.Component {
                     }
                     </tbody>
                 </table>
-                <Row style={{marginTop: 5}}>
+                <div style={{marginTop: 5}}>
                     <a onClick={this.handleChoiceAll}>全选</a>
                     <a onClick={this.handleClear}>清空</a>
-                </Row>
+                </div>
                 <div style={{marginTop: 5, color: 'grey', fontSize: 12}}>
                     {
                         this.transformCN().map((item, index) => {
@@ -213,4 +200,17 @@ export default class CalendarTable extends React.Component {
             </div>
         )
     }
+}
+
+export function deepCopy(obj) {
+    let result = void 0;
+    if (typeof obj === 'object') {
+        result = obj.constructor === Array ? [] : {};
+        for (let i in obj) {
+            typeof obj[i] === 'object' ? (result[i] = deepCopy(obj[i])) : obj.hasOwnProperty(i) ? (result[i] = obj[i]) : void 0;
+        }
+    } else {
+        result = obj;
+    }
+    return result;
 }

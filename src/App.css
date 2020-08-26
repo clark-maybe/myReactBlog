@@ -36,43 +36,128 @@
 
 
 /*时间节点选择器*/
-.calendar-table .calendar-head > tr > th {
-    text-align: center;
+/*.calendar-table .calendar-head > tr > th {*/
+/*    text-align: center;*/
+/*}*/
+
+/*.calendar-table .calendar-head > tr > td {*/
+/*    text-align: center;*/
+/*}*/
+
+/*.calendar-table .calendar-body > tr > td {*/
+/*    width: 15px;*/
+/*    height: 30px;*/
+/*    border: 1px solid #d9d9d9;*/
+/*}*/
+
+/*.calendar-table .calendar-body > tr > .calendar-td {*/
+/*    cursor: pointer;*/
+/*    transition: all;*/
+/*}*/
+
+/*.calendar-table .calendar-body > tr .hasChoice {*/
+/*    background-color: #1890ff;*/
+/*}*/
+
+/*.calendar-table .calendar-body .calendar-td-title {*/
+/*    border: none;*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*}*/
+
+/*.container-calendar-table a{*/
+/*    margin: 5px;*/
+/*}*/
+
+/*.container-calendar-table .calendar-table .calendar-body .calendar-td:hover{*/
+/*    background-color: #e8f4ff;*/
+/*}*/
+
+/*.calendar-table .calendar-body > tr .hasChoice:hover {*/
+/*    background-color: #1890ff!important;*/
+/*}*/
+
+/*标题编辑器*/
+.title-editor{
+    width: 800px;
+    min-width: 400px;
+    min-height: 400px;
+    border: 1px solid #dfd9d9;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
-.calendar-table .calendar-head > tr > td {
-    text-align: center;
+.title-editor .title-editor-title{
+    background-color: #ececec;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 45px;
+    padding: 0 12px;
 }
 
-.calendar-table .calendar-body > tr > td {
-    width: 15px;
-    height: 30px;
-    border: 1px solid #d9d9d9;
+.title-editor .title-editor-title .clear{
+    float: right;
+    font-size: 14px;
 }
 
-.calendar-table .calendar-body > tr > .calendar-td {
-    cursor: pointer;
-    transition: all;
+.title-editor .title-editor-body .title-editor-body-item{
+    position: relative;
 }
 
-.calendar-table .calendar-body > tr .hasChoice {
-    background-color: #1890ff;
+.title-editor .title-editor-body .choice{
+    background-color: #f6f6f6;
 }
 
-.calendar-table .calendar-body .calendar-td-title {
+.title-editor .title-editor-body .title-editor-body-item div{
+    display: inline-block;
+}
+
+.title-editor .title-editor-body .title-editor-body-item div > input{
+    width: 752px;
+    height: 37px;
     border: none;
-    width: auto;
-    height: auto;
+    outline: none;
+    font-size: 16px;
+    padding-left: 5px;
+    overflow: hidden;
 }
 
-.container-calendar-table a{
-    margin: 5px;
+.title-editor .title-editor-body .title-editor-body-item div > input::placeholder{
+    color: #c2c2c2;
 }
 
-.container-calendar-table .calendar-table .calendar-body .calendar-td:hover{
-    background-color: #e8f4ff;
+.title-editor .title-editor-body .title-editor-body-item div > input:hover{
+    background-color: #f6f6f6;
 }
 
-.calendar-table .calendar-body > tr .hasChoice:hover {
-    background-color: #1890ff!important;
+.title-editor .title-editor-body .title-editor-body-item div > input:focus{
+    border: none;
+}
+
+.title-editor .title-editor-body .title-editor-body-item .title-editor-body-item-left{
+    width: 44px;
+    height: 37px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.title-editor .title-editor-body .title-editor-body-item .title-editor-body-item-del{
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    cursor: pointer;
+    color: #bdbdbd;
+}
+
+.title-editor .title-editor-body .title-editor-body-item .title-editor-body-item-del:hover{
+    color: #131313;
+}
+
+/*机器人流程图 --- GoJs*/
+.diagram-component {
+    width: 800px;
+    height: 800px;
+    border: solid 1px black;
+    background-color: white;
 }
