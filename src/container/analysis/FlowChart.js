@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Modal, Row, Col, Drawer, Radio, Icon, Tooltip } from 'antd';
 import G6 from '@antv/g6';
-import { connect } from 'react-redux';
 import { fromJS } from 'immutable';
 
 import './RobotFlowChart.less';
@@ -387,12 +386,4 @@ class FlowChart extends React.Component {
     }
 }
 
-function mapStateToProps(state, ownProps) {
-    let thisPageState = fromJS({});
-    return {
-        loading: thisPageState.get('loading'),
-        sourceData: thisPageState.get('sourceData')
-    };
-}
-
-export default connect(mapStateToProps, {})(FlowChart);
+export default FlowChart;
