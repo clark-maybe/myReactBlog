@@ -1,0 +1,33 @@
+:global{
+
+    .flow-chart-Modal{
+      position: absolute;
+      left: 0;
+      top: 0;
+      .ant-modal-body{
+        padding: 0;
+      }
+    }
+
+    //主结构
+    .flow-chart{
+        overflow: hidden;
+        position: relative;
+        border-radius: 0 0 5px 5px;
+
+        //顶部操作区域
+        .flow-chart-control-area-top{
+            background-color: #414141;
+        }
+        //主操作区域
+        .flow-chart-container{
+            background-color: #414141;
+        }
+
+      //抽屉样式覆盖
+      .ant-drawer-header{
+        background-color: #e1e1e1;
+        font-weight: 600;
+      }
+    }
+}
